@@ -1,11 +1,15 @@
 import { Box, Button, Center, Flex,Image, Spacer, Text, useToast } from '@chakra-ui/react'
-import React, { useContext } from 'react'
-import product1 from '../img/image-product-1-thumbnail.jpg'
+import React, { useContext, useState } from 'react'
+import product1 from '../img/image-product-2-thumbnail.jpg'
 import { allContext } from './allContext'
+import { allimg } from './Image'
+import Yoxla from './ProductImage'
+
 
 function Body() {
     let {zero, setZero,basket, setBasket}=useContext(allContext)
     const toast = useToast()
+    const [products]=useState(allimg)
 
     const handlePlus = () =>{
         setZero(zero+1)
@@ -31,23 +35,7 @@ function Body() {
     <>
     <Box w="100%" py="80px" px="230px">
         <Flex>
-            <Box w={'45%'}>
-                <Box w={'100%'} h={'400px'} >
-                    <Image w={'100%'} h={'100%'} borderRadius={'15px'} objectFit={'cover'} src={product1}/>
-                </Box>
-                <Box py={'20px'} display={'flex'} justifyContent={'between'}>
-                    <Flex>
-                    <Image w={'23%'} borderRadius={'15px'} src={product1} transition='0.5s' _hover={{opacity:'0.5', cursor:'pointer'}}/>
-                    <Spacer/>
-                    <Image w={'23%'} borderRadius={'15px'} src={product1} transition='0.5s' _hover={{opacity:'0.5', cursor:'pointer'}}/>
-                    <Spacer/>
-                    <Image w={'23%'} borderRadius={'15px'} src={product1} transition='0.5s' _hover={{opacity:'0.5', cursor:'pointer'}}/>
-                    <Spacer/>
-                    <Image w={'23%'} borderRadius={'15px'} src={product1} transition='0.5s' _hover={{opacity:'0.5', cursor:'pointer'}}/>
-
-                    </Flex>
-                </Box>
-            </Box>
+            <Yoxla/>
             <Spacer/>
 
             <Box w={'45%'} py={'50px'} >

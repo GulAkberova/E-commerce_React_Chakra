@@ -5,3 +5,8 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+.border_add{
+  border: 3px solid orange;
+  border-radius: 18px;
+  opacity: 0.6;
+}

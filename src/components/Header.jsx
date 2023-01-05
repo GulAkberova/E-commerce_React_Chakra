@@ -26,7 +26,7 @@ import {
 import logo from "../img/logo.svg";
 import man from "../img/image-avatar.png";
 import basket from "../img/icon-cart.svg";
-import product1 from '../img/image-product-1-thumbnail.jpg'
+import product1 from '../img/image-product-2-thumbnail.jpg'
 
 
 function Header() {
