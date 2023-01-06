@@ -30,7 +30,7 @@ import product1 from '../img/image-product-2-thumbnail.jpg'
 
 
 function Header() {
-  let {zero, setZero,basket, setBasket}=useContext(allContext)
+  let {zero, setZero,basket, setBasket,all,setAll}=useContext(allContext)
 
   return (
     <>
@@ -74,7 +74,9 @@ function Header() {
                   <MenuList  w={'400px'}>
                     <MenuItem p={'10px'} bg={'white'} borderBottom={'1px solid  #d9d9d9'}>Cart</MenuItem>
                    <Box>
-                    {basket ? 
+                  
+                    {
+                        all.length>0 ? all.map((i,index)=>(
                     <Box p='20px'>
                       <Box>
                         <Flex>
@@ -82,12 +84,14 @@ function Header() {
                         <Spacer/>
                         <Box>
                         <Text fontSize='md'>Fall Limited Edition Sneakers</Text>
-                        <Box>
-                         <Flex>
-                         <Text fontSize='md'>$125.00 x {zero}</Text> 
-                          <Text as='b'ps='4px'>${125* zero}.00</Text>
-                         </Flex>
-                         </Box> 
+                      
+                          <Box>
+                          <Flex>
+                          <Text fontSize='md'>$125.00 x {zero}</Text> 
+                           <Text as='b'ps='4px'>${125* zero}.00</Text>
+                          </Flex>
+                          </Box> 
+                      
 
                           </Box>
                         <Spacer/>
@@ -97,11 +101,12 @@ function Header() {
                           </Flex>
                       </Box>
 
-                    </Box> :
-                      <Center>
+                    </Box> 
+                      )):   <Center>
                       <Text fontSize='xl' py='40px' >Your cart is empty</Text>
                       </Center>
-                      }
+                    }
+                    
 
                    </Box>
                   </MenuList>

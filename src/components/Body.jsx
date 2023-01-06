@@ -7,7 +7,7 @@ import Yoxla from './ProductImage'
 
 
 function Body() {
-    let {zero, setZero,basket, setBasket}=useContext(allContext)
+    let {zero, setZero,basket, setBasket,all,setAll}=useContext(allContext)
     const toast = useToast()
     const [products]=useState(allimg)
 
@@ -21,7 +21,8 @@ function Body() {
         }
     }
     const handleBasket=()=>{
-        setBasket(!basket)
+        setAll([...all,zero])
+        console.log(all)
         toast({
             title: 'Basket',
             description: "Basket add.",
